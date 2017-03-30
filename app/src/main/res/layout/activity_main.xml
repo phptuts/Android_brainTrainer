@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.noahglaser.braintrainerapp.MainActivity">
+
+    <TextView
+        android:text="30s"
+        android:layout_height="wrap_content"
+        android:id="@+id/timeKeeper"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:padding="10dp"
+        android:background="@android:color/holo_orange_light"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/gridLayout"
+        android:layout_width="wrap_content" />
+
+    <TextView
+        android:text="0 + 2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/problemTextView"
+        android:textSize="34sp"
+        android:textStyle="normal|bold"
+        app:layout_constraintTop_toTopOf="@+id/timeKeeper"
+        app:layout_constraintBottom_toBottomOf="@+id/timeKeeper"
+        app:layout_constraintLeft_toRightOf="@+id/timeKeeper"
+        app:layout_constraintVertical_bias="0.55"
+        app:layout_constraintRight_toLeftOf="@+id/recordText"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp" />
+
+    <TextView
+        android:text="40/50"
+        android:layout_height="wrap_content"
+        android:id="@+id/recordText"
+        android:textSize="34sp"
+        android:textStyle="normal|bold"
+        android:textAllCaps="true"
+        app:layout_constraintTop_toTopOf="@+id/problemTextView"
+        app:layout_constraintBottom_toBottomOf="@+id/problemTextView"
+        android:background="@android:color/holo_orange_dark"
+        android:padding="10dp"
+        app:layout_constraintRight_toRightOf="@+id/gridLayout"
+        android:layout_width="wrap_content" />
+
+    <GridLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/problemTextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="150dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="32dp"
+        android:rowCount="2"
+        android:columnCount="2"
+        android:layout_marginStart="32dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="32dp"
+        app:layout_constraintVertical_bias="0.16000003"
+        android:id="@+id/gridLayout">
+
+        <Button
+            android:text="39"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_row="0"
+            android:onClick="answer"
+            android:layout_column="0"
+            android:padding="0dp"
+            android:layout_margin="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/answer1"
+            android:tag="1"
+            android:background="@color/colorPrimaryDark"
+            android:textSize="75sp" />
+
+        <Button
+            android:text="50"
+            android:layout_row="0"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:padding="0dp"
+            android:layout_margin="0dp"
+            android:layout_column="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/answer2"
+            android:tag="2"
+            android:onClick="answer"
+            android:background="@android:color/holo_green_dark"
+            android:textSize="75sp" />
+
+        <Button
+            android:text="2"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/answer4"
+            android:padding="0dp"
+            android:layout_margin="0dp"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:tag="4"
+            android:onClick="answer"
+            android:background="@android:color/holo_blue_bright"
+            android:textSize="75sp" />
+
+        <Button
+            android:text="20"
+            android:layout_row="1"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:padding="0dp"
+            android:layout_margin="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/answer3"
+            android:tag="3"
+            android:background="@color/colorAccent"
+            android:textSize="75sp"
+            android:onClick="answer" />
+    </GridLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:id="@+id/gotItRightTextView"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp" />
+
+    <Button
+        android:text="Play Again"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/restartBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/gotItRightTextView"
+        android:visibility="invisible"
+        android:onClick="playAgain" />
+
+
+</android.support.constraint.ConstraintLayout>

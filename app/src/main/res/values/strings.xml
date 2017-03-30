@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BrainTrainerApp</string>
+    <string name="title_activity_gate">GateActivity</string>
+</resources>
